@@ -51,11 +51,13 @@
                                   UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Success"
                                                                                                  message:@"This is your device!"
                                                                                           preferredStyle:UIAlertControllerStyleAlert];
+                                  [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDestructive handler:nil]];
                                   [self presentViewController:alert animated:YES completion:nil];
                               } else {
                                   UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
                                                                                                  message:@"You are not the device owner."
                                                                                           preferredStyle:UIAlertControllerStyleAlert];
+                                  [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDestructive handler:nil]];
                                   [self presentViewController:alert animated:YES completion:nil];
                               }
                               
