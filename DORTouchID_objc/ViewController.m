@@ -6,10 +6,7 @@
 //  Copyright © 2015 Coding Lion Studio. All rights reserved.
 //
 
-// View Controllers
 #import "ViewController.h"
-
-// Frameworks
 #import <LocalAuthentication/LocalAuthentication.h>
 
 @interface ViewController ()
@@ -20,24 +17,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)touchIDButtonTapped:(UIButton *)sender {
+    [self evaluateWithPolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics];
+}
+- (IBAction)touchIDPasscodeButtonTapped:(id)sender {
+    [self evaluateWithPolicy:LAPolicyDeviceOwnerAuthentication];
+}
+
+- (void)evaluateWithPolicy:(LAPolicy)policy {
     LAContext *context = [[LAContext alloc] init];
     
     NSError *error = nil;
     
-    if ([context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&error]) {
+    if ([context canEvaluatePolicy:policy error:&error]) {
         /**
          *  AUthenticate user
          */
-        [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics
+        [context evaluatePolicy:policy
                 localizedReason:@"Prove that you're a device owner."
                           reply:^(BOOL success, NSError *error) {
                               
@@ -54,13 +56,11 @@
                                   UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Success"
                                                                                                  message:@"This is your device!"
                                                                                           preferredStyle:UIAlertControllerStyleAlert];
-                                  [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDestructive handler:nil]];
                                   [self presentViewController:alert animated:YES completion:nil];
                               } else {
                                   UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
                                                                                                  message:@"You are not the device owner."
                                                                                           preferredStyle:UIAlertControllerStyleAlert];
-                                  [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDestructive handler:nil]];
                                   [self presentViewController:alert animated:YES completion:nil];
                               }
                               
@@ -72,8 +72,6 @@
                                                                 preferredStyle:UIAlertControllerStyleAlert];
         [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDestructive handler:nil]];
         [self presentViewController:alert animated:YES completion:nil];
-        
-        
     }
 }
 
