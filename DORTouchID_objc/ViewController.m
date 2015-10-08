@@ -72,8 +72,6 @@
                                                                 preferredStyle:UIAlertControllerStyleAlert];
         [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDestructive handler:nil]];
         [self presentViewController:alert animated:YES completion:nil];
-        
-        
     }
 }
 
