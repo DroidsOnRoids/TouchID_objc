@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9046" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9035"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,8 +17,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1pE-tU-efo">
+                                <rect key="frame" x="350" y="250" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="CMN-pZ-zQv"/>
+                                    <constraint firstAttribute="width" constant="100" id="cgv-bP-IkS"/>
+                                    <constraint firstAttribute="height" constant="100" id="hYr-By-ZCB"/>
+                                    <constraint firstAttribute="width" constant="100" id="nKo-dq-ATc"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="touchIDIcon"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="CMN-pZ-zQv"/>
+                                        <exclude reference="cgv-bP-IkS"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="touchIDPasscodeButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hff-hY-dLd"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0zg-Ci-zg4">
-                                <rect key="frame" x="120" y="250" width="100" height="100"/>
+                                <rect key="frame" x="150" y="250" width="100" height="100"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="EGD-Ug-wJw"/>
@@ -36,33 +56,48 @@
                                     <action selector="touchIDButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uuK-NJ-mDy"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1pE-tU-efo">
-                                <rect key="frame" x="411" y="250" width="100" height="100"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WithBiometrics" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s5x-Ta-liP">
+                                <rect key="frame" x="125" y="358" width="150" height="14.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="CMN-pZ-zQv"/>
-                                    <constraint firstAttribute="width" constant="100" id="cgv-bP-IkS"/>
-                                    <constraint firstAttribute="height" constant="100" id="hYr-By-ZCB"/>
-                                    <constraint firstAttribute="width" constant="100" id="nKo-dq-ATc"/>
+                                    <constraint firstAttribute="width" constant="150" id="WLC-v3-sUF"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="touchIDIcon"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="CMN-pZ-zQv"/>
-                                        <exclude reference="cgv-bP-IkS"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="touchIDPasscodeButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hff-hY-dLd"/>
-                                </connections>
-                            </button>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Authentication" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKk-FE-k49">
+                                <rect key="frame" x="325" y="358" width="150" height="14.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="ODI-hJ-4Yd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DORTouchID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kzo-Di-Ctc">
+                                <rect key="frame" x="20" y="40" width="560" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="SvA-84-asG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="0zg-Ci-zg4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="0Lm-PY-km9"/>
+                            <constraint firstItem="kzo-Di-Ctc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="Avb-98-ABe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kzo-Di-Ctc" secondAttribute="trailing" id="Go6-6g-MPq"/>
+                            <constraint firstItem="s5x-Ta-liP" firstAttribute="top" secondItem="0zg-Ci-zg4" secondAttribute="bottom" constant="8" id="P3N-V8-hWJ"/>
+                            <constraint firstItem="PKk-FE-k49" firstAttribute="centerX" secondItem="1pE-tU-efo" secondAttribute="centerX" id="U4N-vI-Pej"/>
+                            <constraint firstItem="PKk-FE-k49" firstAttribute="top" secondItem="1pE-tU-efo" secondAttribute="bottom" constant="8" id="coZ-Sa-Enx"/>
                             <constraint firstItem="0zg-Ci-zg4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fGd-lK-8Ea"/>
-                            <constraint firstItem="1pE-tU-efo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="161" id="mIl-fL-yDe"/>
-                            <constraint firstItem="0zg-Ci-zg4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-130" id="mnC-fM-Pl2"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="kzo-Di-Ctc" secondAttribute="leading" id="fjD-uC-Nhd"/>
+                            <constraint firstItem="1pE-tU-efo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="100" id="mIl-fL-yDe"/>
+                            <constraint firstItem="0zg-Ci-zg4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-100" id="mnC-fM-Pl2"/>
+                            <constraint firstItem="s5x-Ta-liP" firstAttribute="centerX" secondItem="0zg-Ci-zg4" secondAttribute="centerX" id="o8R-fZ-NNb"/>
                             <constraint firstItem="1pE-tU-efo" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="sjJ-wh-ZI5"/>
                             <constraint firstItem="0zg-Ci-zg4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="v6o-u5-KRT"/>
                         </constraints>
