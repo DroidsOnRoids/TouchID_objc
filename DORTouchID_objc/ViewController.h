@@ -6,10 +6,9 @@
 //  Copyright © 2015 Coding Lion Studio. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
-@interface ViewController : UIViewController
-
+@interface ViewController: UIViewController
 
 @end
 

@@ -6,12 +6,12 @@
 //  Copyright © 2015 Coding Lion Studio. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+// Frameworks
+@import UIKit;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate: UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
 
 @end
 

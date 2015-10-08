@@ -6,7 +6,10 @@
 //  Copyright © 2015 Coding Lion Studio. All rights reserved.
 //
 
+// View Controllers
 #import "ViewController.h"
+
+// Frameworks
 #import <LocalAuthentication/LocalAuthentication.h>
 
 @interface ViewController ()
