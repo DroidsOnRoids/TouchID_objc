@@ -12,10 +12,6 @@
 // Frameworks
 #import <LocalAuthentication/LocalAuthentication.h>
 
-@interface ViewController ()
-
-@end
-
 @implementation ViewController
 
 - (void)viewDidLoad {
@@ -29,7 +25,7 @@
 }
 
 - (IBAction)touchIDButtonTapped:(UIButton *)sender {
-    LAContext *context = [[LAContext alloc] init];
+    LAContext *context = [LAContext new];
     
     NSError *error = nil;
     
