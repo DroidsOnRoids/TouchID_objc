@@ -9,10 +9,6 @@
 #import "ViewController.h"
 #import <LocalAuthentication/LocalAuthentication.h>
 
-@interface ViewController ()
-
-@end
-
 @implementation ViewController
 
 - (void)viewDidLoad {
@@ -31,7 +27,7 @@
 }
 
 - (void)evaluateWithPolicy:(LAPolicy)policy {
-    LAContext *context = [[LAContext alloc] init];
+    LAContext *context = [LAContext new];
     
     NSError *error = nil;
     
